@@ -1,0 +1,44 @@
+{
+  "projeto": {
+    "nome": "ArabicaSense",
+    "organizacao": "FarmTech Solutions",
+    "fase": 2,
+    "objetivo": "Monitoramento e irrigação inteligente de baixo custo para agricultura familiar"
+  },
+  "propriedade": {
+    "nome": "Sítio Alto da Serra",
+    "perfil": "agricultura_familiar",
+    "localizacao": {
+      "municipio": "Manhuaçu",
+      "uf": "MG",
+      "estado": "Minas Gerais",
+      "pais": "Brasil",
+      "sede": {
+        "latitude": -20.093534,
+        "longitude": -42.219588
+      }
+    },
+    "area_total_estimada_ha": 11.0,
+    "area_cultivada_cafe_ha": null,
+    "limites_geograficos": null,
+    "observacao": "Dados informados para estudo de caso; área plantada e perímetro ainda não levantados"
+  },
+  "cultura": {
+    "nome": "Café arábica",
+    "nome_cientifico": "Coffea arabica",
+    "ph_referencia_min": 5.5,
+    "ph_referencia_max": 6.0
+  },
+  "meteorologia": {
+    "provedor": "Open-Meteo",
+    "horas_previsao": 24,
+    "chuva_acumulada_minima_mm": 3.0,
+    "probabilidade_horaria_maxima_minima_pct": 60.0,
+    "regra": "Bloquear se acumulado de 24h >= 3 mm E maior probabilidade horária >= 60%; apenas demonstrativa"
+  },
+  "simulacao": {
+    "umidade_ligar_pct": 40.0,
+    "umidade_desligar_pct": 45.0,
+    "observacao": "DHT22 representa didaticamente umidade do solo; valores não calibrados para campo"
+  }
+}

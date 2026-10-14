@@ -1,0 +1,20 @@
+ARABICASENSE - RELATORIO ESTATISTICO CONSOLIDADO
+Sitio Alto da Serra - Manhuacu/MG
+Fonte: ESP32/Wokwi - dados simulados (nao coletados fisicamente no sitio)
+-----------------------------------------------------------
+Total de leituras: 220
+Umidade: media 40.69%, minima 24.50%, maxima 55.50%
+pH simulado medio: 3.63
+Leituras de pH na faixa 5,5 a 6,0: 0
+Bomba ligada: 60 leituras ( 27.3 %)
+Bomba desligada: 160 leituras
+Previsao de chuva: 20 leituras
+Sem bloqueio meteorologico: 80 leituras
+Previsao indisponivel: 120 leituras
+N adequado (estado simulado): 148 leituras
+P adequado (estado simulado): 94 leituras
+K adequado (estado simulado): 71 leituras
+-----------------------------------------------------------
+O percentual de leituras com bomba ligada NAO e o tempo real de acionamento.
+Nao foram medidas economia real de agua ou produtividade agricola.
+LDR representa pH e DHT22 representa umidade do solo apenas didaticamente.
