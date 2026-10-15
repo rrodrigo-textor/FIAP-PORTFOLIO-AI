@@ -283,7 +283,7 @@ CAP-1-UM-MAPA-DO-TESOURO/
 
 ## Links do projeto
 
-- **[Vídeo de apresentação no YouTube](https://youtu.be/ZsISBQwn38Q)** — demonstração do ArabicaSense (confirmar publicação e acesso como *Não listado* antes da submissão).
+- **[Vídeo de apresentação no YouTube](https://youtu.be/ZsISBQwn38Q)** — demonstração do ArabicaSense.
 - **[Pasta desta atividade no GitHub](https://github.com/rrodrigo-textor/FIAP-PORTFOLIO-AI/tree/master/1TIAO/FASE2/CAP-1-UM-MAPA-DO-TESOURO)** — firmware, scripts, dados, gráficos e documentação.
 - **[Portfólio acadêmico FIAP](https://github.com/rrodrigo-textor/FIAP-PORTFOLIO-AI)** — repositório baseado no template oficial.
 
