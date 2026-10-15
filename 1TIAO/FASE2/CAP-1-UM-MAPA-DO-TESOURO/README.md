@@ -11,16 +11,16 @@
 
 ### Integrantes
 
-- **Rodrigo Textor de Textor** — [LinkedIn](https://www.linkedin.com/in/rodrigo-textor/)
-- **Raiane Sirlene da Silva** — perfil profissional a inserir.
-- **Pedro Victor Pires** — perfil profissional a inserir.
+- **Pedro Victor Pires** 
+- **Raiane Sirlene da Silva** 
+- **Rodrigo Textor de Textor** 
 
-*Os links profissionais dos demais integrantes serão incluídos após confirmação.*
+
 
 ### Professores
 
-- **Tutor(a):** nome e perfil a confirmar.
-- **Coordenador:** André Godoi Chiovato *(nome indicado no template; confirmar para a turma).*
+- **Tutor(a):** Sabrina Otoni
+- **Coordenador:** André Godoi Chiovato 
 
 ## Resumo e descrição do projeto
 
