@@ -270,13 +270,13 @@ CAP-1-UM-MAPA-DO-TESOURO/
 │   │   ├── coletar_dados.py
 │   │   ├── coleta_experimental.py
 │   │   ├── analise_estatistica.R
-│   │   └── config_fazenda.json  # cópia necessária na configuração atual
+│   │   └── config_fazenda.json  
 │   ├── data/
 │   ├── docs/
 │   └── notebooks/
-├── data/                  # diretório do template
-├── docs/                  # diretório do template
-└── notebooks/             # diretório do template
+├── data/                  
+├── docs/                  
+└── notebooks/             
 ```
 
 **Atenção à publicação:** a estrutura acima descreve a organização esperada após a migração. Confirme com `git ls-files` e `git status` se os arquivos em `IR-ALEM/src` e a configuração foram realmente registrados e enviados ao GitHub. O histórico CSV e os resultados permanecem nos diretórios `dados/` e `resultados/`, acessados a partir da raiz da atividade.
