@@ -1,28 +1,41 @@
-# ArabicaSense
-## Monitoramento Inteligente e Gestão da Irrigação do Café Arábica
+# ArabicaSense — Monitoramento Inteligente e Gestão da Irrigação do Café Arábica
 
-**FarmTech Solutions | FIAP — Fase 2**
-
+**FIAP — Graduação ON em Inteligência Artificial | 1TIAO — Fase 2**  
+**Atividade:** Capítulo 1 — Um Mapa do Tesouro  
+**Projeto:** FarmTech Solutions  
 **Estudo de caso:** Sítio Alto da Serra — Agricultura Familiar, Manhuaçu/MG
 
----
+## Identificação do grupo
+
+**Grupo:** FarmTech Solutions
+
+### Integrantes
+
+- **Rodrigo Textor de Textor** — [LinkedIn](https://www.linkedin.com/in/rodrigo-textor/)
+- **Raiane Sirlene da Silva** — perfil profissional a inserir.
+- **Pedro Victor Pires** — perfil profissional a inserir.
+
+*Os links profissionais dos demais integrantes serão incluídos após confirmação.*
+
+### Professores
+
+- **Tutor(a):** nome e perfil a confirmar.
+- **Coordenador:** André Godoi Chiovato *(nome indicado no template; confirmar para a turma).*
+
+## Resumo e descrição do projeto
+
+O **ArabicaSense** é um protótipo acadêmico de monitoramento agrícola e automação da irrigação para o café arábica. A continuidade da Fase 1 do FarmTech Solutions — que considerou café arábica e cana-de-açúcar — motivou uma pesquisa sobre regiões e propriedades associadas à agricultura familiar. Para a Fase 2, foi escolhido um estudo de caso em Manhuaçu/MG, centrado no café arábica e contextualizado com referências técnicas da Embrapa e da Emater-MG. A arquitetura reúne simulação ESP32/Wokwi, lógica de controle, integração meteorológica em Python e análise estatística em R.
+
+**Transparência dos dados:** a fundamentação agronômica recorre a publicações reais, mas os sensores e as 220 leituras utilizadas na análise são **simulados**, não medições realizadas no sítio.
 
 ## 1. Apresentação
 
 O **ArabicaSense** é um protótipo para monitoramento agrícola e gerenciamento inteligente da irrigação, desenvolvido para atender a Fase 2 do projeto FarmTech Solutions, da FIAP.
 
 A proposta é investigar como tecnologias acessíveis, como microcontroladores, sensores, programação e análise de dados, podem apoiar pequenos produtores rurais nas decisões relacionadas ao cultivo do café arábica.
-O sistema combina a simulação de parâmetros do solo com informações meteorológicas e regras automáticas para inicío da irrigação.
+O sistema combina a simulação de parâmetros do solo com informações meteorológicas e regras automáticas para início da irrigação.
 
-Utilizamos no projeto:
-
-
-    - ESP32 
-    - Wokwi 
-    - C/C++ 
-    - Python 
-    - Integração com API Open-Meteo 
-    - Análise Estatística em R.
+**Tecnologias centrais:** ESP32, Wokwi, C/C++, Python, API Open-Meteo e R.
 
 ## 2. Objetivos
 
@@ -97,7 +110,7 @@ O DHT22 mede temperatura e umidade relativa do ar. Nesta atividade, a umidade in
 
 ### Imagem do circuito
 
-![Circuito Eletrônico Completo do ArabicaSense](image.png)
+![Circuito eletrônico do ArabicaSense](image.png)
 
 
 ## 6. Parâmetros agronômicos de referência
@@ -117,7 +130,7 @@ Os alertas nutricionais são tratados separadamente das decisões de irrigação
 
 ## 7. Controle automatizado da irrigação
 
-O ESP32 monitora a umidade simulada e aplica regras de acionamento com margem de tolerância.
+O ESP32 monitora a umidade simulada e aplica regras de acionamento com histerese.
 
 | Condição | Comportamento |
 |---|---|
@@ -130,7 +143,7 @@ O ESP32 monitora a umidade simulada e aplica regras de acionamento com margem de
 
 Os limites de umidade são demonstrativos e não representam uma prescrição agronômica de irrigação.
 
-A margem de tolerância é utilizada para evitar alternâncias frequentes do relé nas proximidades dos limites configurados.
+A histerese é utilizada para evitar alternâncias frequentes do relé nas proximidades dos limites configurados.
 
 ## 8. Ir Além 1 — Integração meteorológica com Python
 
@@ -159,7 +172,7 @@ O script `integrar_meteorologia.py` executa a consulta e transmite a decisão au
 
 ## 9. Ir Além 2 — Análise estatística em R
 
-As informações geradas pelo ESP32 são organizadas em um historico_sensores.CSV e posteriormente analisadas utilizando R.
+As informações geradas pelo ESP32 são organizadas em um `historico_sensores.csv` e posteriormente analisadas utilizando R.
 
 Geramos uma base consolidada contendo **220 registros simulados**, com diferentes condições de umidade, pH, nutrientes, meteorologia e acionamento do relé.
 
@@ -182,54 +195,60 @@ Esse resultado corresponde a 100% de conformidade nos cenários simulados avalia
 
 ### Gráficos estatísticos
 
-Os gráficos consolidados estão disponíveis na pasta `resultados/`:
+Os resultados a seguir representam uma série histórica consolidada de **220 leituras simuladas**. No conjunto, a umidade média foi de **40,69%**; a bomba esteve ligada em **60 registros (27,3%)** e desligada em **160**. A avaliação específica de seis cenários controlados encontrou **zero divergências** nos 120 registros desses cenários.
 
-1. ### Monitoramento da umidade
-    **Arquivo**: `01_umidade.png`
-    
-    **Descritivo**: apresenta a evolução da umidade simulada ao longo das 220 leituras, permitindo observar condições de baixa umidade e recuperação.
-   
-    ![Monitoramento da Unidade](resultados/01_umidade.png)
+#### Monitoramento da umidade
 
-2. ### Controle da irrigação
-    **Arquivo**: `02_irrigacao.png`
+O gráfico apresenta a evolução da umidade simulada nas 220 leituras, destacando condições de baixa umidade e recuperação.
 
-    **Descritivo**: apresenta os estados de acionamento e desligamento da bomba durante o monitoramento.
-    ![Controle da Irrigação](resultados/02_irrigacao.png)
+![Evolução da umidade simulada](resultados/01_umidade.png)
 
-3. ### Monitoramento do pH
-    **Arquivo**: `03_ph.png`
+#### Controle da irrigação
 
-    **Descritivo**: apresenta a variação do pH simulado ao longo das leituras, permitindo avaliar os valores registrados em relação à faixa de referência adotada para o cultivo do café arábica.
-    ![Monitoramento do pH](resultados/03_ph.png)
+O gráfico mostra os estados de acionamento e desligamento da bomba ao longo do monitoramento.
 
-4. ### Monitoramento dos Nutrientes NPK
-    **Arquivo**: `04_npk.png`
+![Estados da bomba de irrigação](resultados/02_irrigacao.png)
 
-    **Descritivo**: distribuição das condições simuladas de nitrogênio, fósforo e potássio, permitindo identificar a frequência de estados nutricionais adequados e deficientes durante o monitoramento.
+#### Monitoramento do pH
 
-    ![Monitoramento de Nitrogênio/Fósforo/Potássio](resultados/04_npk.png)
+O gráfico apresenta o pH simulado em relação à faixa de referência adotada para o cenário de café arábica.
 
-5. ### Monitoramento Meteorológico
-    **Arquivo**: `05_meteorologia.png`
+![Monitoramento do pH simulado](resultados/03_ph.png)
 
-    **Descritivo**: distribuição dos registros conforme as informações meteorológicas recebidas, identificando situações sem bloqueio climático, com previsão de chuva e com dados indisponíveis.
+#### Nutrientes NPK
 
-    ![Monitoramento Metereológico](resultados/05_meteorologia.png)
+O gráfico apresenta a frequência dos estados adequados e deficientes simulados de nitrogênio, fósforo e potássio.
 
-6. ### Decisões de Irrigação
-    **Arquivo**: `06_decisoes_irrigacao.png`
+![Estados nutricionais simulados](resultados/04_npk.png)
 
-    **Descritivo**: decisões tomadas pelo sistema, considerando a umidade simulada e as condições meteorológicas. Permite observar quando a irrigação foi autorizada, suspensa ou permaneceu desativada.
+#### Monitoramento meteorológico
 
-    ![Monitoramento das Decisões de Irrigação](resultados/06_decisoes_irrigacao.png)
+O gráfico apresenta os registros com chuva prevista, sem bloqueio meteorológico e com previsão indisponível.
 
-Eles representam o histórico de monitoramento como uma série única, sem segmentação visual por etapa de coleta.
+![Estados meteorológicos registrados](resultados/05_meteorologia.png)
 
-## 10. Estrutura do projeto
+#### Decisões de irrigação
+
+O gráfico relaciona as decisões registradas com as regras de umidade e bloqueio meteorológico.
+
+![Decisões automatizadas de irrigação](resultados/06_decisoes_irrigacao.png)
+
+Os gráficos representam uma única série histórica, sem separar visualmente os conjuntos de testes.
+
+
+
+## Estrutura de pastas
+
+A pasta desta atividade é `1TIAO/FASE2/CAP-1-UM-MAPA-DO-TESOURO/`. Os arquivos `platformio.ini`, `diagram.json` e `wokwi.toml` permanecem na raiz da atividade para preservar a execução do PlatformIO/Wokwi.
 
 ```text
-Fase2/
+CAP-1-UM-MAPA-DO-TESOURO/
+├── README.md
+├── image.png
+├── platformio.ini
+├── diagram.json
+├── wokwi.toml
+├── config_fazenda.json
 ├── src/
 │   └── main.cpp
 ├── dados/
@@ -243,102 +262,127 @@ Fase2/
 │   ├── 05_meteorologia.png
 │   ├── 06_decisoes_irrigacao.png
 │   └── relatorio_estatistico.txt
-├── diagram.json
-├── wokwi.toml
-├── platformio.ini
-├── config_fazenda.json
-├── meteorologia.py
-├── integrar_meteorologia.py
-├── enviar_serial.py
-├── coletar_dados.py
-├── coleta_experimental.py
-├── analise_estatistica.R
-└── README.md
+├── IR-ALEM/
+│   ├── src/
+│   │   ├── meteorologia.py
+│   │   ├── integrar_meteorologia.py
+│   │   ├── enviar_serial.py
+│   │   ├── coletar_dados.py
+│   │   ├── coleta_experimental.py
+│   │   ├── analise_estatistica.R
+│   │   └── config_fazenda.json  # cópia necessária na configuração atual
+│   ├── data/
+│   ├── docs/
+│   └── notebooks/
+├── data/                  # diretório do template
+├── docs/                  # diretório do template
+└── notebooks/             # diretório do template
 ```
 
-## 11. Como executar
+**Atenção à publicação:** a estrutura acima descreve a organização esperada após a migração. Confirme com `git ls-files` e `git status` se os arquivos em `IR-ALEM/src` e a configuração foram realmente registrados e enviados ao GitHub. O histórico CSV e os resultados permanecem nos diretórios `dados/` e `resultados/`, acessados a partir da raiz da atividade.
 
-### ESP32 e Wokwi
+## Links do projeto
 
-1. Instale o Visual Studio Code.
-2. Instale as extensões PlatformIO e Wokwi.
-3. Abra a pasta `Fase2` como projeto PlatformIO.
-4. Execute o Build do ambiente `esp32dev`.
-5. Inicie o simulador Wokwi.
-6. Altere os sensores virtuais e observe o Monitor Serial.
+- **[Vídeo de apresentação no YouTube](https://youtu.be/ZsISBQwn38Q)** — demonstração do ArabicaSense (confirmar publicação e acesso como *Não listado* antes da submissão).
+- **[Pasta desta atividade no GitHub](https://github.com/rrodrigo-textor/FIAP-PORTFOLIO-AI/tree/master/1TIAO/FASE2/CAP-1-UM-MAPA-DO-TESOURO)** — firmware, scripts, dados, gráficos e documentação.
+- **[Portfólio acadêmico FIAP](https://github.com/rrodrigo-textor/FIAP-PORTFOLIO-AI)** — repositório baseado no template oficial.
 
-### Consulta meteorológica
+## Decisões técnicas e justificativas
 
-Com Python configurado, execute:
+| Escolha | Justificativa |
+|---|---|
+| ESP32 + Arduino/C++ | Centralizar leituras e regras de acionamento em um microcontrolador acessível. |
+| Wokwi | Permitir testes reproduzíveis em ambiente virtual, sem dependência de componentes físicos. |
+| PlatformIO | Gerenciar compilação, bibliotecas e configuração do firmware. |
+| Botões, LDR e DHT22 | Representar didaticamente NPK, pH e umidade, conforme escopo da simulação; não são sensores agrícolas equivalentes. |
+| Histerese de 40%/45% | Reduzir alternâncias do relé nas proximidades dos limites demonstrativos. |
+| Relé desativado com previsão ausente ou leitura inválida | Priorizar comportamento seguro diante de dados insuficientes. |
+| Python + Open-Meteo | Consultar previsão meteorológica e transmitir a decisão ao ESP32 virtual. |
+| Serial RFC2217 | Comunicar scripts Python com a simulação Wokwi em execução. |
+| CSV + R | Preservar o histórico de leituras para estatísticas e gráficos reproduzíveis. |
+
+## Como executar o código
+
+### Pré-requisitos
+
+- Visual Studio Code, PlatformIO e extensão Wokwi para VS Code;
+- Python 3 com `pyserial` e dependências adicionais utilizadas pelo módulo meteorológico;
+- R com `ggplot2`, `dplyr` e `readr` para a análise;
+- acesso à internet para consultar a API Open-Meteo;
+- Wokwi configurado para usar a serial RFC2217 na porta local `4000`.
+
+### 1. Preparar o ambiente
+
+Clone o portfólio e abra **a pasta da atividade** como projeto do PlatformIO. No PowerShell, partindo da pasta onde deseja armazenar o repositório:
 
 ```powershell
-python meteorologia.py --automatico
+cd C:\Projetos
+git clone https://github.com/rrodrigo-textor/FIAP-PORTFOLIO-AI.git
+cd .\FIAP-PORTFOLIO-AI\1TIAO\FASE2\CAP-1-UM-MAPA-DO-TESOURO
+python -m pip install pyserial requests
 ```
 
-Para consultar a previsão e enviar a decisão automaticamente ao ESP32 virtual, com o Wokwi e o servidor RFC2217 em funcionamento, execute:
+Se o repositório já estiver clonado, entre diretamente na pasta da atividade; não execute `git clone` outra vez na mesma pasta.
+
+### 2. Compilar o ESP32 e iniciar o Wokwi
+
+Com a pasta da atividade aberta no VS Code, execute o comando **PlatformIO: Build**, ou, se a CLI estiver instalada:
 
 ```powershell
-python integrar_meteorologia.py
+platformio run
 ```
 
-A execução requer acesso à internet para consultar a API meteorológica.
+Abra `diagram.json` e inicie **Wokwi: Start Simulator**. Verifique o console do ESP32; a previsão começa indisponível até a transmissão da informação meteorológica.
 
-### Coleta de dados
+### 3. Ir Além 1 — Meteorologia
 
-O script `coletar_dados.py` permite registrar leituras estruturadas do ESP32 virtual em um arquivo CSV.
+Execute estes comandos **a partir da raiz da atividade**, com o Wokwi em funcionamento:
 
-A porta de comunicação utilizada pelo protótipo é `rfc2217://localhost:4000`, conforme a configuração do Wokwi.
+```powershell
+python .\IR-ALEM\src\meteorologia.py --automatico
+python .\IR-ALEM\src\integrar_meteorologia.py
+```
 
-### Análise estatística
+**Importante:** a versão atual de `meteorologia.py` busca `config_fazenda.json` em `IR-ALEM/src/`. Verifique a presença do arquivo nesse local antes da execução. Essa cópia evita alterar o código já validado; futuramente, os caminhos poderão ser centralizados. Para testar manualmente a liberação/bloqueio climático:
 
-Com R e suas dependências instaladas, execute no terminal R:
+```powershell
+python .\IR-ALEM\src\enviar_serial.py CHUVA_PREVISTA=0
+python .\IR-ALEM\src\enviar_serial.py CHUVA_PREVISTA=1
+```
+
+**Observação:** o script realiza a consulta quando é executado; não existe, nesta versão, uma consulta meteorológica sob demanda iniciada automaticamente pelo ESP32.
+
+### 4. Ir Além 2 — Estatísticas em R
+
+Abra um terminal R e defina o diretório de trabalho como a **raiz da atividade** (ajuste o caminho ao computador):
 
 ```r
-setwd("C:/Projetos/farmtech-solutions/Fase2")
-source("analise_estatistica.R", encoding = "UTF-8")
+setwd("C:/Projetos/FIAP-PORTFOLIO-AI/1TIAO/FASE2/CAP-1-UM-MAPA-DO-TESOURO")
+source("IR-ALEM/src/analise_estatistica.R", encoding = "UTF-8")
 ```
 
-O caminho do diretório deverá ser ajustado conforme o computador utilizado.
+O script lê `dados/historico_sensores.csv` e salva gráficos e relatório em `resultados/`. **Não é necessário executar scripts de coleta para reproduzir a análise dos 220 registros existentes.**
 
-Os arquivos resultantes serão gerados na pasta `resultados/`.
+## Limitações e possibilidades de evolução
 
-## 12. Limitações e possibilidades de evolução
+Esta entrega é uma prova de conceito acadêmica. Os limites configurados não substituem recomendações agronômicas. O histórico contém leituras simuladas; as porcentagens de acionamento do relé não equivalem a tempo efetivo de irrigação nem comprovam economia de água.
 
-A versão apresentada é uma prova de conceito acadêmica.
+Possíveis evoluções: sensores de solo apropriados e calibrados, consulta meteorológica sob demanda, verificação de validade da previsão, limites de tempo de irrigação, aferição de vazão e validação em campo.
 
-Entre as evoluções previstas estão:
+## Referências
 
-- Substituição dos sensores simulados por dispositivos agrícolas apropriados.
-- Consulta meteorológica sob demanda.
-- Expiração automática de previsões desatualizadas.
-- Controle de duração máxima da irrigação.
-- Medição real de vazão e consumo de água.
-- Expansão para diferentes setores da propriedade.
-- Desenvolvimento de uma interface simplificada para o produtor rural.
+- [Embrapa (2022) — Boas práticas agrícolas aplicadas à lavoura cafeeira para o estado de Minas Gerais](https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1148365).
+- [Embrapa (2017) — Controlled irrigation and nitrogen, phosphorus and potassium fertilization affect the biochemical composition and quality of Arabica coffee beans](https://www.embrapa.br/en/busca-de-publicacoes/-/publicacao/1065059/controlled-irrigation-and-nitrogen-phosphorus-and-potassium-fertilization-affect-the-biochemical-composition-and-quality-of-arabica-coffee-beans).
+- [Emater-MG — Manual do Manejo Orgânico do Cafeeiro](https://www.emater.mg.gov.br/download.do?id=87853).
+- [Open-Meteo — API](https://open-meteo.com/en/docs).
+- [Wokwi — Documentação](https://docs.wokwi.com/).
+- [PlatformIO — Documentação](https://docs.platformio.org/).
+- [R Project](https://www.r-project.org/).
 
-Qualquer implantação física exigirá validação em campo, adequação elétrica e acompanhamento técnico.
+## Licença e atribuição
 
-## 13. Vídeo de apresentação
-
-## 13. Vídeo de apresentação
-
-[▶️ Demonstração do ArabicaSense no YouTube](https://youtu.be/ZsISBQwn38Q)
-
-O vídeo demonstrará o circuito Wokwi, as regras de irrigação, a integração meteorológica em Python e os resultados estatísticos produzidos em R.
-
-## 14. Referências
-
-- [Embrapa (2022) — Boa práticas agrícolas aplicadasà lavoura cafeeira para o Estado de Minas Gerais](https://www.infoteca.cnptia.embrapa.br/infoteca/handle/doc/1148365)
-
-- [Embrapa (2017) - Controlled irrigation and nitrogen, phosphorus and potassium fertilization affect the biochemical composition and quality of Arabica coffee beans.](https://www.embrapa.br/en/busca-de-publicacoes/-/publicacao/1065059/controlled-irrigation-and-nitrogen-phosphorus-and-potassium-fertilization-affect-the-biochemical-composition-and-quality-of-arabica-coffee-beans)
-- [Emater-MG —  Manual do Manejo Orgânico do Cafeeiro — publicação técnica (PDF)](https://www.emater.mg.gov.br/download.do?id=87853)
-- [Open-Meteo — Documentação da API](https://open-meteo.com/en/docs)
-- [Wokwi — Documentação](https://docs.wokwi.com/)
-- [PlatformIO — Documentação](https://docs.platformio.org/)
-- [R Project — Linguagem R](https://www.r-project.org/)
+O [template oficial FIAP-PORTFOLIO-AI](https://github.com/fiap-tutoria/FIAP-PORTFOLIO-AI) identifica a licença **Creative Commons Atribuição 4.0 Internacional (CC BY 4.0)** para o material do template. Isso não determina automaticamente a licença dos códigos autorais deste projeto; sua licença deve ser definida pelos responsáveis antes de declarar permissão de reutilização.
 
 ---
 
-**Projeto acadêmico desenvolvido para a FIAP — FarmTech Solutions, Fase 2.**
-
-*ArabicaSense: tecnologia acessível para apoiar decisões mais inteligentes na agricultura familiar.*
+**FarmTech Solutions | FIAP — Fase 2 | Capítulo 1: Um Mapa do Tesouro**
