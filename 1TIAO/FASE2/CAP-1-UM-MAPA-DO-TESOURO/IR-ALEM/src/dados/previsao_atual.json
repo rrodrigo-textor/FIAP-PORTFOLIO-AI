@@ -1,0 +1,21 @@
+{
+  "status": "ok",
+  "projeto": "ArabicaSense",
+  "consultado_em": "2026-10-14T01:41:16-03:00",
+  "local": {
+    "nome": "Sítio Alto da Serra",
+    "municipio": "Manhuaçu",
+    "uf": "MG",
+    "latitude": -20.093534,
+    "longitude": -42.219588,
+    "tipo": "sede_propriedade"
+  },
+  "fonte": "Open-Meteo",
+  "inicio_previsao": "2026-10-14T01:00",
+  "fim_previsao": "2026-10-15T00:00",
+  "horas_previsao": 24,
+  "chuva_acumulada_mm": 3.7,
+  "maior_probabilidade_horaria_pct": 92.0,
+  "chuva_prevista": 1,
+  "regra_demonstrativa": "Bloquear se acumulado de 24h >= 3 mm E maior probabilidade horária >= 60%; apenas demonstrativa"
+}

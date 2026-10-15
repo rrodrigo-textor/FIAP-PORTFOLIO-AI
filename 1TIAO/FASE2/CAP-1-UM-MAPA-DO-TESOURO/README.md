@@ -320,7 +320,9 @@ Qualquer implantação física exigirá validação em campo, adequação elétr
 
 ## 13. Vídeo de apresentação
 
-**[INSERIR LINK DO VÍDEO NO YOUTUBE — NÃO LISTADO]**
+## 13. Vídeo de apresentação
+
+[▶️ Demonstração do ArabicaSense no YouTube](https://youtu.be/ZsISBQwn38Q)
 
 O vídeo demonstrará o circuito Wokwi, as regras de irrigação, a integração meteorológica em Python e os resultados estatísticos produzidos em R.
 
